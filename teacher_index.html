@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Test</title>
+    <link rel="stylesheet" href="../shared/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #question-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus, input[type="number"]:focus, select:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #add-question {
+            background-color: #28a745;
+            margin-bottom: 15px;
+        }
+
+        #add-question:hover {
+            background-color: #218838;
+        }
+
+        #test-code {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create Test</h1>
+    <form id="question-form">
+        <div id="questions-container">
+            <div class="question">
+                <label>Question: <input type="text" name="question" required></label>
+                <label>Marks: <input type="number" name="marks" required></label>
+                <label>Option A: <input type="text" name="optionA" required></label>
+                <label>Option B: <input type="text" name="optionB" required></label>
+                <label>Option C: <input type="text" name="optionC" required></label>
+                <label>Option D: <input type="text" name="optionD" required></label>
+                <label>Correct Answer:
+                    <select name="correctAnswer" required>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <label>Time Limit (minutes): <input type="number" name="timeLimit" required></label>
+        <button type="button" id="add-question">Add Another Question</button>
+        <button type="submit">Generate Test Code</button>
+    </form>
+    <div id="test-code"></div>
+    <script src="addQuestions.js"></script>
+</body>
+</html>
